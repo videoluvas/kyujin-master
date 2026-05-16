@@ -1,0 +1,12 @@
+/var/www/eizo-job/app/logs/fetch-jobs.log
+/var/www/eizo-job/app/logs/assign-categories.log
+/var/www/ai-job-pro/app/logs/fetch-jobs.log
+/var/www/ai-job-pro/app/logs/assign-categories.log
+{
+    daily
+    rotate 7
+    compress
+    missingok
+    notifempty
+    copytruncate
+}

@@ -1,0 +1,7 @@
+# 映像求人PRO
+* * * * * flock -n /tmp/eizo-fetch.lock -c "cd /var/www/eizo-job/app && /root/.nvm/versions/node/v22.12.0/bin/node ./node_modules/tsx/dist/cli.mjs scripts/fetch-jobs.ts >> /var/www/eizo-job/app/logs/fetch-jobs.log 2>&1"
+* * * * * flock -n /tmp/eizo-assign.lock -c "cd /var/www/eizo-job/app && /root/.nvm/versions/node/v22.12.0/bin/node ./node_modules/tsx/dist/cli.mjs scripts/assign-categories.ts >> /var/www/eizo-job/app/logs/assign-categories.log 2>&1"
+5 3 * * * cd /var/www/eizo-job/app && /root/.nvm/versions/node/v22.12.0/bin/node ./node_modules/tsx/dist/cli.mjs scripts/backup-db.ts >> /var/www/eizo-job/app/logs/backup-db.log 2>&1
+# AI映像求人PRO
+* * * * * flock -n /tmp/aijob-fetch.lock -c "cd /var/www/ai-job-pro/app && /root/.nvm/versions/node/v22.12.0/bin/node ./node_modules/tsx/dist/cli.mjs scripts/fetch-jobs.ts >> /var/www/ai-job-pro/app/logs/fetch-jobs.log 2>&1"
+* * * * * flock -n /tmp/aijob-assign.lock -c "cd /var/www/ai-job-pro/app && /root/.nvm/versions/node/v22.12.0/bin/node ./node_modules/tsx/dist/cli.mjs scripts/assign-categories.ts >> /var/www/ai-job-pro/app/logs/assign-categories.log 2>&1"
